@@ -1,3 +1,5 @@
+const cart = require("../pages/cart");
+
 module.exports = {
     'clear cart': function(browser) {
         const homePage = browser.page.home();
@@ -25,5 +27,20 @@ module.exports = {
         productPage.click('@addToCartButton');
         productPage.waitForElementVisible('@cartConfirmationModal');
         productPage.click('@seeCartOkButton');
+
+        const cartPage = browser.page.cart();
+        cartPage.waitForElementVisible('@chgCourierButton');
+        cartPage.click('@chgCourierButton');
+        browser.frame(4);
+        cartPage.waitForElementVisible('@cancelChgCourierButton');
+        cartPage.click('@cancelChgCourierButton');
+        cartPage.waitForElementNotPresent('@cancelChgCourierButton');
+        browser.frame(null);
+        cartPage.waitForElementVisible('@deleteItemButton');
+        cartPage.click('@deleteItemButton');
+        cartPage.waitForElementVisible('@popUpOkDeleteConfirmButton');
+        cartPage.click('@popUpOkDeleteConfirmButton');
+
+        cartPage.assert.containsText('@cartEmptyLabel', 'Tidak ada produk di Shopping Cart.');
     }
 }
