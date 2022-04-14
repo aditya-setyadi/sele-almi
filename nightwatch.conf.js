@@ -18,7 +18,7 @@ module.exports = {
   src_folders: [],
 
   // See https://nightwatchjs.org/guide/working-with-page-objects/using-page-objects.html
-  page_objects_path: ['node_modules/nightwatch/examples/pages/'],
+  page_objects_path: ['pages/'],
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/custom-commands.html
   custom_commands_path: ['node_modules/nightwatch/examples/custom-commands/'],
@@ -37,7 +37,7 @@ module.exports = {
   test_settings: {
     default: {
       disable_error_log: false,
-      launch_url: 'https://nightwatchjs.org',
+      launch_url: 'https://dana.id',
 
       screenshots: {
         enabled: false,
