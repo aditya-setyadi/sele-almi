@@ -1,0 +1,4 @@
+- clone the repository.
+- make sure you have git and nodejs installed in your machine.
+- open the repository, run the test via terminal with the command 'npm test'
+- in case you just want to show the result see it in [here](https://www.loom.com/share/776528285d6046d89684c923337fa906)
